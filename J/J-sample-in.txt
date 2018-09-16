@@ -1,0 +1,7 @@
+2
+e
+Test sentence
+Tester sentence
+a
+The ACM International Collegiate Programming Contest
+The Association for Computing Machinery's Collegiate Programming Contest

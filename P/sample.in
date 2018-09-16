@@ -1,0 +1,34 @@
+4
+clause "ice"
+clause = noun verb noun .
+noun = "I" .
+noun = "ice" "cream" .
+verb = "like" .
+
+2
+dinner "dessert"
+dinner = spaghetti "dessert" .
+spaghetti = "some" "spaghetti" "then" "more" spaghetti .
+
+1
+pantry "chocolate"
+pantry = "spaghetti" .
+
+14
+rules "QUOTE"
+rules = rule .
+rules = rule rules .
+rule = identifier "EQ" list "DOT" .
+list = .
+list = term list .
+term = identifier .
+term = literal .
+identifier = letters .
+literal = "QUOTE" letters "QUOTE" .
+letters = letter .
+letters = letter letters .
+letter = "A" .
+letter = "B" .
+letter = "C" .
+
+0
