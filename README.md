@@ -28,3 +28,18 @@ with N,P and O solved, we would have had 480 points! instead we ended up with 18
 
 EDIT:
 I pushed a Fix for problem O.py, it now solves the 100 point problem.
+
+UPDATE:
+>rob: I pushed a fix for problem O, look how close I was
+>ralph: Ah, too bad! I wish we'd just picked 3 of the 100 point problems and focused on them instead of trying to do all of them simultaneously. Then I could have discussed O more with you.
+Honestly I had my doubts about your solution to O, but impressed you got it to work.
+
+Thanks for the writeup.
+A correction about problem P: I did manage to solve the time-out issues. By the end I was getting 'Incorrect Answer'. I thought about it a tiny bit more and realised another problem with my solution. Fixing it with brute force would have taken about 30 seconds, but would be way too slow. Fixing it more efficiently would have been more work - it isn't even immediately clear to me how to do that.
+Looks like I underestimated both K and P. I had K right from the start, but it required much more code than I expected.
+
+Where's the ANZAC programming contest domjudge?
+
+>rob: http://domarchive.cosc.canterbury.ac.nz/public/ (select nzpc2018 in the top right)
+
+
