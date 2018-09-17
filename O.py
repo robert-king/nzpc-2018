@@ -28,7 +28,6 @@ def gj(m, eps=1.0/(10**10)):
 			return False
 		for y2 in range(y+1,h):
 			minv = modinv(m[y][y])
-			#print(m[y][y], minv)
 			c = m[y2][y]*minv
 			for x in range(y,w):
 				m[y2][x] -= m[y][x] * c
@@ -48,34 +47,41 @@ def gj(m, eps=1.0/(10**10)):
 
 def solve(M, b):
 	m2 = [row[:]+[right] for row, right in zip(M,b)]
-	return [row[-1] for row in m2] if gj(m2) else 1
+	return [row[-1] for row in m2] if gj(m2) else None
 
 def run():
 	N = int(input())
 	dp = list(map(int, input().split()))
-	if N <=2:
-		print(1)
-		return
-	rows = [[0]*(N-1) for _ in range(N-1)]
-	b = [-1 % MOD]*(N-1)
-	for i, v in enumerate(dp[:-1]):
 
+	reached = set()
+	reached.add(0)
+	for _ in range(101):
+		reached2 = set()
+		for v in reached:
+			for v2 in range(v + 1, min(N-1, v+7)):
+				if dp[v2] == 0:
+					reached2.add(v2)
+				else:
+					reached2.add(dp[v2]-1)
+		reached = reached.union(reached2)
+	rows = [[0]*(N) for _ in range(N)]
+	b = [-1 % MOD]*(N)
+	b[-1] = 0
+	for i, v in enumerate(dp):
 		rows[i][i] = -1 % MOD
+		if not i in reached:
+			continue
 		for j in range(i+1, i+7):
 			if j < N-1:
 				if dp[j] == 0:
 					rows[i][j] += modinv(6)
-					#print(i,j)
 				else:
 					rows[i][dp[j]-1] += modinv(6)
-					#print(i,j,dp[j])
 	for row in rows:
-		#print('> ', row)
 		for i in range(len(row)):
 			row[i] = row[i] % MOD
 	
 	ans = solve(rows, b)
-	#print(ans)
 	print(ans[0] % MOD)
 
 run()
