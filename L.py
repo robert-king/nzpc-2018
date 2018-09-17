@@ -32,21 +32,16 @@ def possible(cnt):
 def bs():
 	a = 1
 	b = len(B)
+	mid = a + (b - a)//2
+	if b > 70000:
+		mid = 16000
 	while a != b:
-		mid = a + (b - a)//2
 		if possible(mid):
 			b = mid
 		else:
 			a = mid + 1
+		mid = a + (b - a)//2
 	ans = len(B) - a
 	return ans
 
-#print(bs())
-def brute():
-	for cnt in range(1,len(B)+1):
-		if possible(cnt):
-			return len(B)-cnt
-			break
-
-#print(brute())
 print(bs())
