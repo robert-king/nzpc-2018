@@ -24,3 +24,7 @@ however if cell 3 has a ladder going to cell 20 for example, we would say x1 = (
 This can be put into a matrix, row reduced and solved (taking care the numbers get very very large, so we need to use modulo arithmatic). The quesiton guaranteed there is always a solution so I assumed my matrix was always invertable I.e. the equations always have a solution. However the problem is, for example, if you have 6 ladders in a row going upwards, you can there are certain cells that the player could never get to, Inside the cells that are unreachable, there can be infinit loops where it's impossible to progress (which is fine because you can never get stuck in there), but it meant my system was indeterminate. A very easy fix for this is to simply ignore any cells that aren't reachable, in hind site we could have easily solved this problem if our focus wasn't spread between the 2 other 100 point problems. 
 
 with N,P and O solved, we would have had 480 points! instead we ended up with 180 points. It turned out in the end that 220 points would have been enough to win, so perhaps we were aiming too high.
+
+
+EDIT:
+I pushed a Fix for problem O.py, it now solves the 100 point problem.
